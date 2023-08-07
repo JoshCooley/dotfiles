@@ -8,6 +8,7 @@ scripts=(
   directories.sh
   editor.sh
   git.sh
+  homebrew.sh
   path.sh
   prompt.sh
   utility.sh
