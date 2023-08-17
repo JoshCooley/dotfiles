@@ -9,6 +9,7 @@ scripts=(
   editor.sh
   git.sh
   homebrew.sh
+  iterm2.sh
   path.sh
   prompt.sh
   utility.sh
