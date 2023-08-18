@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 # Links dotfiles to home directory
 
-GLOBIGNORE=install.sh:README.md
+GLOBIGNORE=.git:install.sh:README.md
 
 dotfiles=(.*)
 for file in "${dotfiles[@]}"; do
