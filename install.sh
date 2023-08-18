@@ -1,13 +1,18 @@
 #! /usr/bin/env bash
 # Links dotfiles to home directory
+set -o errexit \
+    -o nounset
+shopt -s globstar
 
-GLOBIGNORE=.git:install.sh:README.md
-iterm2_script_path="$HOME"/.profile.d//iterm2.sh
+GLOBIGNORE='.git:.git/**:install.sh:README.md'
+iterm2_script_path="$HOME"/.profile.d/iterm2.sh
 
-dotfiles=(.*)
+mkdir -p "$HOME"/.profile.d
+
+dotfiles=(**)
 for file in "${dotfiles[@]}"; do
   file_path=$(realpath "$file")
-  ln -is "$file_path" "$HOME"/
+  ln -is "$file_path" "$HOME"/"$file"
 done
 
 if [[ -f $iterm2_script_path ]]; then
